@@ -195,9 +195,10 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
 
 
-./notebook
-./score_sheets
-./zip_file
-./.*
-./*.xlsx
-./*.csv
+notebook
+score_sheets
+zip_file
+.*
+*.xlsx
+*.csv
+.tmp
