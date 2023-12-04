@@ -1,3 +1,4 @@
+import shutil
 import moss
 import score_extract
 import os
@@ -6,7 +7,7 @@ import pandas as pd
 import code_collecting
 
 TEMP_DIR = Path(f"{os.getcwd()}").resolve() / ".tmp"
-code_collecting.mkdir(TEMP_DIR, False)
+code_collecting.mkdir(TEMP_DIR, True)
 
 ROW_CODE_EXTRACTION_PATH = TEMP_DIR / "code_extraction"
 CODES_PATH = Path("./zip_file").resolve()
@@ -70,3 +71,5 @@ with pd.ExcelWriter("score_result.xlsx") as writer:
     for i in range(len(scores)):
         scores[i][0].to_excel(writer, sheet_name=scores[i][1])
 print("All scores were saved.")
+
+shutil.rmtree(TEMP_DIR, ignore_errors=True)

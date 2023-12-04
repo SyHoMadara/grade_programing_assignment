@@ -13,7 +13,7 @@ def correct_path(path: Path):
 def get_moss_response(files_path: Path, max_m=10, file_type="c"):
     if max_m < 3:
         raise Exception("max_m can not be less than 3")
-    print(f"moss -l {file_type} -m {max_m} {correct_path(files_path)}/*.{file_type}")
+    # print(f"moss -l {file_type} -m {max_m} {correct_path(files_path)}/*.{file_type}")
     res = os.popen(
         f"moss -l {file_type} -m {max_m} {correct_path(files_path)}/*.{file_type}"
     ).read()
